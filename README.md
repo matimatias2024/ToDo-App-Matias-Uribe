@@ -59,6 +59,26 @@ npm install
 npx cap sync
 ```
 
+## 📱 Descarga Directa del APK
+
+Si solo quieres instalar la aplicación en tu dispositivo Android sin compilar el código, puedes descargar directamente el APK:
+
+### 📥 Descargar APK v1.0.0 (2025)
+
+**[⬇️ Descargar ToDo-App-v1.0.0-2025.apk](https://github.com/matimatias2024/ToDo-App-Matias-Uribe/raw/main/releases/ToDo-App-v1.0.0-2025.apk)**
+
+### 📲 Instrucciones de Instalación
+
+1. **Descarga** el archivo APK desde el enlace anterior
+2. **Habilita** la instalación de aplicaciones de fuentes desconocidas en tu dispositivo Android:
+   - Ve a **Configuración** > **Seguridad** > **Fuentes desconocidas**
+   - O **Configuración** > **Aplicaciones** > **Acceso especial** > **Instalar aplicaciones desconocidas**
+3. **Abre** el archivo APK descargado
+4. **Sigue** las instrucciones de instalación
+5. **¡Disfruta** de la aplicación ToDo!
+
+> **Nota**: El APK está sin firmar (unsigned), por lo que Android mostrará una advertencia de seguridad. Esto es normal para aplicaciones de desarrollo.
+
 ## 🔧 Configuración de Desarrollo
 
 ### Ejecutar en el navegador
