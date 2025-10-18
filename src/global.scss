@@ -32,6 +32,246 @@
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
+/* Temas oscuros deshabilitados para evitar problemas de contraste */
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+/* @import '@ionic/angular/css/palettes/dark.system.css'; */
+
+/**
+ * Global Contrast and Accessibility Styles
+ * -----------------------------------------------------
+ * Ensures readable text and controls across all components
+ */
+
+/* Base application styles for legible contrast */
+html, body, ion-app, ion-content {
+  background: var(--ion-background-color) !important;
+  color: var(--ion-text-color) !important;
+}
+
+/* Items y listas */
+ion-item {
+  --background: var(--ion-item-background);
+  --color: var(--ion-text-color);
+}
+
+/* Toolbar y títulos */
+ion-toolbar {
+  --background: var(--ion-toolbar-background);
+  --color: var(--ion-toolbar-color);
+}
+
+ion-title, ion-header, ion-label {
+  color: var(--ion-text-color);
+}
+
+/* Inputs y formularios - reglas específicas para mejor contraste */
+ion-input::part(native),
+ion-textarea::part(native) {
+  color: var(--ion-input-color);
+  background: var(--ion-input-background);
+}
+
+ion-input::part(native)::placeholder,
+ion-textarea::part(native)::placeholder {
+  color: var(--ion-placeholder-color);
+}
+
+/* Select (texto y placeholder) */
+ion-select::part(text),
+ion-select::part(placeholder) {
+  color: var(--ion-text-color);
+}
+
+ion-input, ion-textarea, ion-select, ion-searchbar {
+  color: var(--ion-input-color);
+  --color: var(--ion-input-color);
+  --background: var(--ion-input-background);
+  --placeholder-color: var(--ion-placeholder-color);
+  --highlight-color-focused: var(--ion-highlight-color-focused);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--ion-placeholder-color);
+}
+
+/* Segmentos / chips */
+ion-segment-button {
+  --color: var(--ion-text-color);
+  --color-checked: var(--ion-text-color);
+  --indicator-color: var(--ion-color-primary);
+}
+
+/* Badges/Chips legibles */
+ion-badge, ion-chip {
+  color: var(--ion-text-color);
+}
+
+/* Botones con buen contraste */
+ion-button {
+  --color: var(--ion-color-primary-contrast);
+}
+
+/* Mensajes de validación */
+ion-note, .error, .ion-invalid {
+  color: #dc2626;
+}
+
+/* Estado vacío más legible, si existe */
+.empty-state, .empty, .no-items {
+  color: #374151;
+}
+
+/* Evitar overrides peligrosos previos */
+* { 
+  text-shadow: none; 
+}
+
+/* Parche extra defensivo para casos rebeldes */
+ion-label, ion-text, p, h1, h2, h3, h4, h5, h6, span {
+  color: var(--ion-text-color) !important;
+}
+
+/* Si tienes fondos translúcidos, garantiza legibilidad del botón/label encima */
+.glass, .translucent, .frosted {
+  color: var(--ion-text-color);
+}
+
+/**
+ * Global App Styles
+ * -----------------------------------------------------
+ */
+.app-container {
+  min-height: 100vh;
+  background: var(--ion-background-color);
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ion-color-primary);
+  margin: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.margin-top {
+  margin-top: 16px;
+}
+
+.margin-bottom {
+  margin-bottom: 16px;
+}
+
+.padding-horizontal {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.border-radius {
+  border-radius: 8px;
+}
+
+.shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/**
+ * Custom Component Overrides
+ * -----------------------------------------------------
+ */
+ion-button {
+  --border-radius: 8px;
+  font-weight: 600;
+}
+
+ion-card {
+  --background: var(--ion-card-background);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: var(--ion-text-color);
+}
+
+ion-toast {
+  --border-radius: 8px;
+}
+
+ion-alert {
+  --border-radius: 12px;
+}
+
+/* Tab bar styling */
+ion-tab-bar {
+  --background: var(--ion-tab-bar-background);
+  --color: var(--ion-text-color);
+}
+
+/**
+ * Safe Areas and FAB Positioning - Solución para problemas de UI
+ * -----------------------------------------------------
+ * Corrige FAB tapado por barra del sistema y formularios cortados
+ */
+
+/* Coloca el FAB por encima de la barra del sistema sin tapar gestos */
+ion-fab[slot="fixed"],
+ion-fab {
+  bottom: calc(var(--fab-offset)) !important;
+  right: calc(max(var(--safe-right), 16px)) !important;
+}
+
+/* Páginas con FAB: deja espacio de scroll para que nada quede oculto */
+.safe-bottom {
+  padding-bottom: calc(var(--fab-offset) + 72px) !important; /* 56px FAB + margen */
+}
+
+/* Formularios largos o con select al final */
+.form-safe {
+  padding-bottom: var(--form-bottom-gap) !important;
+}
+
+/* Evita rebotes raros al llegar al fondo */
+ion-content {
+  overscroll-behavior: contain;
+}
+
+/* Segment scrollable con padding para evitar cortes */
+ion-segment[scrollable] {
+  padding-inline-end: 12px;
+}

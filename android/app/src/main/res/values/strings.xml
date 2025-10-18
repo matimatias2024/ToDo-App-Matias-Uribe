@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">todo-aiep</string>
+    <string name="title_activity_main">todo-aiep</string>
+    <string name="package_name">com.aiep.todoapp</string>
+    <string name="custom_url_scheme">com.aiep.todoapp</string>
+</resources>

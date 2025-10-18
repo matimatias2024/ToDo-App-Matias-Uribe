@@ -1,0 +1,25 @@
+:host {
+  --logo-max: 320px;
+}
+
+.credits-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-wrap {
+  text-align: center;
+}
+
+.aiep-logo {
+  width: min(70vw, var(--logo-max));
+  height: auto;
+  display: block;
+  margin-inline: auto;
+}
+
+.credits-text {
+  margin-top: 12px;
+  color: var(--ion-text-color);
+}
