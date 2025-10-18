@@ -65,7 +65,7 @@ Si solo quieres instalar la aplicación en tu dispositivo Android sin compilar e
 
 ### 📥 Descargar APK v1.0.0 (2025)
 
-**[⬇️ Descargar ToDo-App-v1.0.0-2025.apk](https://github.com/matimatias2024/ToDo-App-Matias-Uribe/raw/main/releases/ToDo-App-v1.0.0-2025.apk)**
+**[⬇️ Descargar app-debug.apk](https://github.com/matimatias2024/ToDo-App-Matias-Uribe/raw/main/releases/app-debug.apk)**
 
 ### 📲 Instrucciones de Instalación
 
