@@ -1,0 +1,7 @@
+{
+  "name": "todo-aiep",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
