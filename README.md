@@ -236,7 +236,7 @@ npx cap sync
 
 **Matías Uribe**  
 Institución: **AIEP**  
-Año: **2024**  
+Año: **2025**  
 Versión: **1.0.0**
 
 ---
